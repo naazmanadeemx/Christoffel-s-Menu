@@ -5,7 +5,7 @@ import { MenuItem } from '../types/MenuItem';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../App';
-import { Picker } from '@react-native-picker/picker'; // Import Picker for dropdown
+import { Picker } from '@react-native-picker/picker'; 
 
 type AddMenuItemScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'AddMenuItem'>;
 
@@ -21,22 +21,20 @@ const AddMenuItemScreen = () => {
 
   const addItemHandler = () => {
     const newItem: MenuItem = {
-      id: Math.floor(Math.random() * 10000), // Generate a random number for ID
+      id: Math.floor(Math.random() * 10000), 
       name,
       description,
       course,
       price: parseFloat(price),
     };
 
-    // Update the menu items state directly
     setMenuItems((currentItems) => [...currentItems, newItem]);
 
-    // Navigate back to Home without parameters since we already updated the state
     navigation.navigate('Home');
   };
 
   const cancelHandler = () => {
-    // Clear inputs and navigate back to Home
+    
     setName('');
     setDescription('');
     setCourse('');

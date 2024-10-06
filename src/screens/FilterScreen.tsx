@@ -13,7 +13,7 @@ type FilterScreenProps = {
 };
 
 const FilterScreen: React.FC<FilterScreenProps> = ({ route }) => {
-  const { menuItems } = route.params; // Accessing menuItems from route params
+  const { menuItems } = route.params; 
   const [selectedCourse, setSelectedCourse] = useState<string>('All');
 
   const filteredItems = selectedCourse === 'All'

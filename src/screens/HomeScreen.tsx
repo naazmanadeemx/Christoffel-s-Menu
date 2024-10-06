@@ -13,7 +13,7 @@ const HomeScreen = () => {
   const navigation = useNavigation<HomeScreenNavigationProp>();
 
   const addItemHandler = () => {
-    navigation.navigate('AddMenuItem', { setMenuItems }); // Pass setMenuItems here
+    navigation.navigate('AddMenuItem', { setMenuItems }); 
   };
 
   const removeItemHandler = (id: number) => {
@@ -63,25 +63,25 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1, 
     borderBottomColor: '#ddd', 
     flexDirection: 'row', 
-    justifyContent: 'space-between', // Aligns children to the space between
-    alignItems: 'center', // Aligns items vertically
-    borderRadius: 5, // Optional: rounds the corners
-    backgroundColor: '#f9f9f9', // Optional: adds a light background color
+    justifyContent: 'space-between', 
+    alignItems: 'center', 
+    borderRadius: 5, 
+    backgroundColor: '#f9f9f9', 
   },
   itemDetails: { 
-    flex: 1, // This allows the details to take up the remaining space
+    flex: 1, 
   },
   itemText: { 
     fontSize: 18, 
     fontWeight: 'bold' 
   },
   removeButton: {
-    backgroundColor: '#e74c3c', // Red background for remove button
+    backgroundColor: '#e74c3c', 
     borderRadius: 5,
     padding: 8,
   },
   removeButtonText: {
-    color: 'white', // Text color for the button
+    color: 'white', 
     fontWeight: 'bold',
   },
 });

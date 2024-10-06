@@ -1,6 +1,6 @@
 // src/types/MenuItem.ts
 export interface MenuItem {
-    id: number; // or string, depending on your design
+    id: number; 
     name: string;
     description: string;
     course: string;
