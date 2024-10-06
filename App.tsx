@@ -1,20 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// App.tsx
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import HomeScreen from './src/screens/HomeScreen';
+import AddMenuItemScreen from './src/screens/AddMenuItemScreen';
+import { MenuItem } from './src/types/MenuItem';
 
-export default function App() {
+// Define the parameters for the navigation
+export type RootStackParamList = {
+  Home: undefined; // No parameters for Home
+  AddMenuItem: { setMenuItems: React.Dispatch<React.SetStateAction<MenuItem[]>> }; // Accept setMenuItems as parameter
+};
+
+const Stack = createStackNavigator<RootStackParamList>();
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="AddMenuItem" component={AddMenuItemScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
